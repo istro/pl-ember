@@ -1,0 +1,8 @@
+locations.hbs
+<ul>
+{{#each controller}}
+  <li>
+    <a {{bindAttr href='url'}}>{{name}}</a>
+  </li>
+{{/each}}
+</ul>

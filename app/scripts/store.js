@@ -1,2 +1,2 @@
 EmberApp.Store = DS.Store.extend();
-EmberApp.ApplicationAdapter = DS.FixtureAdapter;
+// EmberApp.ApplicationAdapter = DS.FixtureAdapter;

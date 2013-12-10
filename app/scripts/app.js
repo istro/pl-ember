@@ -1,6 +1,13 @@
-var EmberApp = window.EmberApp = Ember.Application.create();
+EmberApp = Ember.Application.create({
+  // log every step
+  LOG_TRANSITIONS_INTERNAL: true,
+  LOG_ACTIVE_GENERATION: true
+});
 
-/* Order and include as you please. */
+EmberApp.ApplicationAdapter = DS.RESTAdapter.extend({
+  host: 'http://localhost:3000'
+});
+
 require('scripts/controllers/*');
 require('scripts/store');
 require('scripts/models/*');
