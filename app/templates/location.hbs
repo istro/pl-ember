@@ -1,7 +1,13 @@
 location.hbs
 <p>
-  Name: {{controller.name}}<br>
-  Id: {{controller.id}}
+  Name: {{model.name}}<br>
+  Id: {{model.id}}
 </p>
 
-<button>Edit</button>
+<p>quickie jquery insertion test:</p>
+<button id='click'>boom!</button>
+<div id='boom' style='display: none; width: 100px; height: 100px; background-color: red'></div>
+
+<p>quickie controller action test</p>
+<button {{action showBox on='click'}}>bam!</button>
+<div id='bam' style='display: none; width: 100px; height: 100px; background-color: olive'></div>
