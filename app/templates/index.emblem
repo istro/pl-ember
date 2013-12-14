@@ -1,0 +1,5 @@
+| index.emblem
+.well
+  h4 EMBLEM!
+  p Here's a link to locations:
+  a href='#/locations' Locations

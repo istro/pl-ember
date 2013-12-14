@@ -27,9 +27,9 @@ module.exports = function (grunt) {
     grunt.initConfig({
         yeoman: yeomanConfig,
         watch: {
-            emberTemplates: {
-                files: '<%= yeoman.app %>/templates/**/*.hbs',
-                tasks: ['emberTemplates']
+            emblem: {
+                files: '<%= yeoman.app %>/templates/**/*.emblem',
+                tasks: ['emblem']
             },
             compass: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
@@ -133,7 +133,7 @@ module.exports = function (grunt) {
                 imagesDir: '<%= yeoman.app %>/images',
                 javascriptsDir: '<%= yeoman.app %>/scripts',
                 fontsDir: '<%= yeoman.app %>/styles/fonts',
-                importPath: 'app/bower_components',
+                importPath: 'app/vendor',
                 httpImagesPath: '/images',
                 httpGeneratedImagesPath: '/images/generated',
                 httpFontsPath: '/styles/fonts',
@@ -252,31 +252,35 @@ module.exports = function (grunt) {
         },
         concurrent: {
             server: [
-                'emberTemplates',
+                'emblem',
                 'compass:server'
             ],
             test: [
-                'emberTemplates',
+                'emblem',
                 'compass'
             ],
             dist: [
-                'emberTemplates',
+                'emblem',
                 'compass:dist',
                 'imagemin',
                 'svgmin',
                 'htmlmin'
             ]
         },
-        emberTemplates: {
-            options: {
-                templateName: function (sourceFile) {
-                    var templatePath = yeomanConfig.app + '/templates/';
-                    return sourceFile.replace(templatePath, '');
-                }
-            },
-            dist: {
+        emblem: {
+            compile: {
                 files: {
-                    '.tmp/scripts/compiled-templates.js': '<%= yeoman.app %>/templates/{,*/}*.hbs'
+                    // 'path/to/result.js': 'path/to/source.emblem', //1:1 compile
+                    '.tmp/scripts/compiled-templates.js': ['app/templates/*.emblem'] //compile and concat into single file
+                },
+                options: {
+                    root: 'app/templates/',
+                    dependencies: {
+                        jquery: 'app/vendor/jquery/jquery.js',
+                        ember: 'app/vendor/ember/ember.js',
+                        emblem: 'app/vendor/emblem.js/emblem.js',
+                        handlebars: 'app/vendor/handlebars/handlebars.js'
+                    }
                 }
             }
         },
