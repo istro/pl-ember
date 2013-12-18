@@ -271,7 +271,7 @@ module.exports = function (grunt) {
             compile: {
                 files: {
                     // 'path/to/result.js': 'path/to/source.emblem', //1:1 compile
-                    '.tmp/scripts/compiled-templates.js': ['app/templates/*.emblem'] //compile and concat into single file
+                    '.tmp/scripts/compiled-templates.js': ['app/templates/**/*.emblem'] //compile and concat into single file
                 },
                 options: {
                     root: 'app/templates/',

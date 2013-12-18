@@ -1,0 +1,10 @@
+| locations/index.emblem
+ul
+  each model in locations
+    li
+      linkTo 'locations.show' model | {{model.name}}
+      button click='deleteRecord model' Delete
+      linkTo 'locations.edit' model | Edit
+
+linkTo 'locations.new' | New
+

@@ -1,0 +1,17 @@
+| locations/show.emblem
+.block
+  | Name: {{model.name}}
+.block
+  | Postal: {{model.postal}}
+
+linkTo 'locations.edit' model | edit  
+br
+a href='#/locations' Locations
+
+/ p quickie jquery insertion test:
+  button#click boom!
+  #boom style='display: none; width: 100px; height: 100px; background-color: gold'
+/ p quickie controller action test
+  button click='showBox' bam!
+  #bam style='display: none; width: 100px; height: 100px; background-color: olive'
+

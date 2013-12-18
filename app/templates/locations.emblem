@@ -1,7 +1,1 @@
-| locations.emblem
-ul
-  each controller
-    li: a href=url = name
-
-p actions quick test: for lack of an action in controller, it will bubble into router
-button click='sayYay' Yay!
+outlet
