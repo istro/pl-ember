@@ -1,10 +1,10 @@
-| locations/show.emblem
+| location.emblem
 .block
   | Name: {{model.name}}
 .block
   | Postal: {{model.postal}}
 
-linkTo 'locations.edit' model | edit  
+linkTo 'location.edit' model | edit  
 br
 a href='#/locations' Locations
 
@@ -15,3 +15,5 @@ a href='#/locations' Locations
   button click='showBox' bam!
   #bam style='display: none; width: 100px; height: 100px; background-color: olive'
 
+
+outlet

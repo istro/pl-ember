@@ -1,0 +1,9 @@
+| edit.emblem
+
+.block
+  | Name: 
+  Ember.TextField valueBinding='name'
+.block
+  | Postal: 
+  Ember.TextField valueBinding='postal'
+button click='save' Save

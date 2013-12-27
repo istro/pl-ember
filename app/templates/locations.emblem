@@ -1,1 +1,11 @@
+| locations.emblem
+ul
+  each location in model
+    li
+      linkTo 'location' location | {{location.name}}
+      button click='deleteRecord location' Delete
+      linkTo 'location.edit' location | Edit
+
+linkTo 'locations.new' | New
+
 outlet

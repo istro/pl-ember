@@ -1,19 +1,11 @@
-EmberApp.LocationsIndexController = Ember.ArrayController.extend({
-  actions: {
-    // controller can have some custom actions as well
-    controllerAction: function(){
-      console.log('custom action in controller! yay!');
-    }
-  }
-});
-
-EmberApp.LocationsEditController = Ember.ObjectController.extend({
+EmberApp.LocationEditController = Ember.ObjectController.extend({
   actions: {
     save: function(){
       var ctrl = this,
           record = this.get('model');
+      // todo: handle errors if save fails?
       record.save().then( function(record){
-        ctrl.transitionToRoute('locations.show', record);
+        ctrl.transitionToRoute('location.index');
       });
     }
   }
@@ -24,9 +16,8 @@ EmberApp.LocationsNewController = Ember.ObjectController.extend({
     save: function(){
       var ctrl = this,
           record = this.get('model');
-      console.log(record.get('name'));
       record.save().then( function(record){
-        ctrl.transitionToRoute('locations.show', record);
+        ctrl.transitionToRoute('locations');
       });
     }
   }
